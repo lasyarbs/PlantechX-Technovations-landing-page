@@ -19,7 +19,43 @@ export const submitDemoRequest = async (data: DemoRequest) => {
     throw new Error(error.message);
   }
 
+  if (result) {
+    try {
+      await sendEmailNotification(result);
+    } catch (emailError) {
+      console.error('Failed to send email notification:', emailError);
+    }
+  }
+
   return result;
+};
+
+const sendEmailNotification = async (demoRequest: any) => {
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+  const response = await fetch(
+    `${supabaseUrl}/functions/v1/send-demo-email`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${supabaseAnonKey}`,
+      },
+      body: JSON.stringify({
+        id: demoRequest.id,
+        name: demoRequest.name,
+        email: demoRequest.email,
+        institution: demoRequest.institution,
+        message: demoRequest.message,
+        created_at: demoRequest.created_at,
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to send email notification');
+  }
 };
 
 export const getAllDemoRequests = async () => {
