@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { X, Send, CheckCircle } from 'lucide-react';
+import { X, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { useDemoModal } from '../context/DemoModalContext';
+import { submitDemoRequest } from '../services/demoRequestService';
 
 const DemoModal: React.FC = () => {
   const { isModalOpen, closeModal } = useDemoModal();
@@ -12,30 +13,35 @@ const DemoModal: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    if (error) setError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    setError(null);
+
+    try {
+      await submitDemoRequest(formData);
       setIsSubmitting(false);
       setIsSubmitted(true);
-      
-      // Reset form and close modal after 2 seconds
+
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({ name: '', email: '', institution: '', message: '' });
         closeModal();
       }, 2000);
-    }, 1000);
+    } catch (err) {
+      setIsSubmitting(false);
+      setError(err instanceof Error ? err.message : 'Failed to submit demo request. Please try again.');
+    }
   };
 
   const handleOverlayClick = (e: React.MouseEvent) => {
@@ -142,6 +148,13 @@ const DemoModal: React.FC = () => {
                   with third parties.
                 </p>
               </div>
+
+              {error && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3">
+                  <AlertCircle size={20} className="text-red-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-red-800">{error}</p>
+                </div>
+              )}
 
               <div className="flex gap-4">
                 <button
