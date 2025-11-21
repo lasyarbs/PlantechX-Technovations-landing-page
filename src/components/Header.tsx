@@ -38,8 +38,12 @@ const Header: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <span className="text-2xl font-inter font-bold text-primary-800">PlantechX</span>
+          <div className="flex items-center space-x-3">
+            <img src="/Untitled-1_copy[1].jpg" alt="Plantech Logo" className="h-8 w-8 object-contain" />
+            <div className="flex items-center space-x-0">
+              <span className="text-2xl font-inter font-bold text-black">Plantech</span>
+              <span className="text-2xl font-inter font-bold" style={{ color: '#0EA5E9' }}>X</span>
+            </div>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
