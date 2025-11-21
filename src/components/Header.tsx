@@ -59,6 +59,9 @@ const Header: React.FC = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
+            <button className="text-neutral-700 hover:text-primary-800 px-6 py-2 font-medium transition-colors duration-200">
+              Log In
+            </button>
             <button
               onClick={openModal}
               className="bg-primary-800 text-white px-6 py-2 rounded-lg hover:bg-primary-900 transition-colors duration-200 font-medium"
@@ -88,6 +91,9 @@ const Header: React.FC = () => {
                   {item.label}
                 </button>
               ))}
+              <button className="block w-full text-left px-3 py-2 text-neutral-700 hover:text-primary-800 hover:bg-neutral-50 rounded-md">
+                Log In
+              </button>
               <button
                 onClick={() => {
                   openModal();
