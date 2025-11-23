@@ -14,7 +14,7 @@ import { DemoModalProvider } from './context/DemoModalContext';
 function App() {
   return (
     <DemoModalProvider>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-black">
         <Header />
         <Hero />
         <About />

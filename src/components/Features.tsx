@@ -81,41 +81,44 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-24 bg-black relative">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#800020]/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-inter font-bold text-neutral-900 mb-6">
-            Key Features
+          <h2 className="text-4xl sm:text-5xl font-inter font-bold text-white mb-6">
+            Powerful Features
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            Discover the powerful capabilities that make PlantechX the preferred choice 
-            for modern educational institutions
+          <p className="text-lg text-white/70 max-w-3xl mx-auto">
+            Everything you need for modern educational assessment
           </p>
-          <div className="w-24 h-1 bg-primary-800 mx-auto mt-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-neutral-200 hover:border-primary-200"
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
             >
-              <div className="bg-primary-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-100 transition-colors duration-200">
-                <feature.icon size={28} className="text-primary-800" />
+              <div className="bg-gradient-to-br from-[#800020] to-[#A00030] w-12 h-12 rounded-lg flex items-center justify-center mb-5">
+                <feature.icon size={24} className="text-white" />
               </div>
-              
-              <h3 className="text-xl font-inter font-semibold text-neutral-900 mb-4">
+
+              <h3 className="text-lg font-inter font-semibold text-white mb-3">
                 {feature.title}
               </h3>
-              
-              <p className="text-neutral-600 mb-6 leading-relaxed">
+
+              <p className="text-white/70 text-sm mb-5 leading-relaxed">
                 {feature.description}
               </p>
-              
+
               <ul className="space-y-2">
                 {feature.details.map((detail, detailIndex) => (
-                  <li key={detailIndex} className="flex items-center text-sm text-neutral-500">
-                    <div className="w-1.5 h-1.5 bg-accent-500 rounded-full mr-3"></div>
+                  <li key={detailIndex} className="flex items-center text-xs text-white/60">
+                    <div className="w-1 h-1 bg-[#800020] rounded-full mr-2"></div>
                     {detail}
                   </li>
                 ))}
@@ -124,13 +127,13 @@ const Features: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-16 bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+        <div className="mt-20 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-inter font-bold text-neutral-900 mb-6">
-                Why Educational Institutions Choose PlantechX
+              <h3 className="text-3xl font-inter font-bold text-white mb-6">
+                Why Choose PlantechX
               </h3>
-              
+
               <div className="space-y-4">
                 {[
                   { icon: Clock, text: 'Efficiency: Reduces administrative overhead by digitizing repetitive tasks' },
@@ -139,21 +142,22 @@ const Features: React.FC = () => {
                   { icon: Shield, text: 'Security: Ensures exam integrity with strict access controls' }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="bg-accent-50 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <item.icon size={20} className="text-accent-600" />
+                    <div className="bg-[#800020]/20 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 border border-[#800020]/30">
+                      <item.icon size={20} className="text-[#C7C7C7]" />
                     </div>
-                    <p className="text-neutral-700">{item.text}</p>
+                    <p className="text-white/80 text-sm">{item.text}</p>
                   </div>
                 ))}
               </div>
             </div>
-            
-            <div>
+
+            <div className="rounded-xl overflow-hidden border border-white/10">
               <img
                 src="https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Educational technology in action"
-                className="rounded-2xl shadow-lg w-full"
+                className="w-full h-96 object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
           </div>
         </div>

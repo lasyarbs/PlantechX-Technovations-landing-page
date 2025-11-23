@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { useDemoModal } from '../context/DemoModalContext';
 
 const Hero: React.FC = () => {
   const { openModal } = useDemoModal();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToFeatures = () => {
     const element = document.getElementById('features');
@@ -13,80 +20,89 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-neutral-50 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-primary-800 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-32 w-48 h-48 bg-accent-500 rounded-full blur-2xl"></div>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-black overflow-hidden">
+      {/* Parallax background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute top-0 right-0 w-96 h-96 bg-[#800020]/20 rounded-full blur-3xl"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        ></div>
+        <div
+          className="absolute -bottom-32 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"
+          style={{ transform: `translateY(${scrollY * -0.3}px)` }}
+        ></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-bold text-neutral-900 leading-tight">
-              Transforming Learning and{' '}
-              <span className="text-primary-800">Assessment</span>{' '}
-              for the Digital Era
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-inter font-bold text-white leading-tight">
+              Transform{' '}
+              <span className="bg-gradient-to-r from-[#800020] to-blue-500 bg-clip-text text-transparent">
+                Education
+              </span>
+              <br />
+              <span className="text-white/80">Assessment Today</span>
             </h1>
-            
-            <p className="text-xl text-neutral-600 mt-6 leading-relaxed max-w-2xl">
-              PlantechX is a cutting-edge online examination platform that empowers students to excel 
-              and faculty to deliver structured, fair, and insightful assessments.
+
+            <p className="text-lg text-white/70 mt-6 leading-relaxed max-w-2xl">
+              PlantechX delivers cutting-edge online examinations that empower students and educators with structured, fair, and insightful assessments for the modern era.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={openModal}
-                className="group bg-primary-800 text-white px-8 py-4 rounded-lg hover:bg-primary-900 transition-all duration-200 font-medium text-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-gradient-to-r from-[#800020] to-[#A00030] text-white px-8 py-3 rounded-lg hover:shadow-2xl transition-all duration-300 font-medium flex items-center justify-center gap-2"
               >
-                Request a Demo
-                <Play size={20} className="group-hover:translate-x-1 transition-transform" />
+                <Play size={18} />
+                Request Demo
               </button>
-              
+
               <button
                 onClick={scrollToFeatures}
-                className="group border-2 border-primary-800 text-primary-800 px-8 py-4 rounded-lg hover:bg-primary-800 hover:text-white transition-all duration-200 font-medium text-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group border-2 border-white/30 text-white px-8 py-3 rounded-lg hover:bg-white/10 hover:border-white/50 transition-all duration-200 font-medium flex items-center justify-center gap-2"
               >
-                Get Started Today
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                Learn More
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
-            {/* Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-8 text-center lg:text-left">
-              <div>
-                <div className="text-3xl font-bold text-primary-800">500+</div>
-                <div className="text-sm text-neutral-600">Institutions</div>
+            {/* Compact stats */}
+            <div className="mt-12 grid grid-cols-3 gap-6">
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold text-white">500+</div>
+                <div className="text-xs text-white/60 mt-1">Institutions</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-800">100K+</div>
-                <div className="text-sm text-neutral-600">Students</div>
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold text-white">100K+</div>
+                <div className="text-xs text-white/60 mt-1">Students</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-primary-800">99.9%</div>
-                <div className="text-sm text-neutral-600">Uptime</div>
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
+                <div className="text-2xl font-bold text-white">99.9%</div>
+                <div className="text-xs text-white/60 mt-1">Uptime</div>
               </div>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative z-10">
+          <div className="relative h-96 lg:h-full">
+            <div className="relative z-10 h-full rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm">
               <img
                 src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Students using PlantechX platform"
-                className="rounded-2xl shadow-2xl w-full"
+                className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#800020]/20 via-transparent to-blue-600/20"></div>
             </div>
-            
-            {/* Floating cards */}
-            <div className="absolute -top-4 -left-4 bg-white p-4 rounded-xl shadow-lg z-20 animate-pulse">
-              <div className="text-sm text-neutral-600">Exam Success Rate</div>
-              <div className="text-2xl font-bold text-accent-500">94%</div>
+
+            {/* Floating glassmorphism cards */}
+            <div className="absolute -top-4 -left-8 bg-white/10 backdrop-blur-lg p-4 rounded-xl border border-white/20 z-20 hover:bg-white/20 transition-all">
+              <div className="text-xs text-white/70">Success Rate</div>
+              <div className="text-xl font-bold text-white mt-1">94%</div>
             </div>
-            
-            <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg z-20 animate-pulse delay-1000">
-              <div className="text-sm text-neutral-600">Time Saved</div>
-              <div className="text-2xl font-bold text-primary-800">80%</div>
+
+            <div className="absolute -bottom-4 -right-8 bg-white/10 backdrop-blur-lg p-4 rounded-xl border border-white/20 z-20 hover:bg-white/20 transition-all">
+              <div className="text-xs text-white/70">Time Saved</div>
+              <div className="text-xl font-bold text-white mt-1">80%</div>
             </div>
           </div>
         </div>
