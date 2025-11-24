@@ -60,9 +60,9 @@ const ProblemSolution: React.FC = () => {
 
           {/* Arrow divider */}
           <div className="hidden lg:flex justify-center">
-            <div className="flex flex-col items-center gap-2">
-              <div className="text-white/50 text-sm font-medium">PlantechX</div>
-              <div className="text-[#800020] text-4xl">→</div>
+            <div className="flex flex-col items-center gap-4">
+              <div className="text-[#0EA5E9] text-lg font-bold">Plantechx</div>
+              <div className="text-[#800020] text-4xl font-bold">→</div>
             </div>
           </div>
 

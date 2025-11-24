@@ -6,16 +6,12 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: 'Can students take exams offline?',
-      answer: 'Yes, PlantechX supports offline exam capabilities. Students can download exams and take them without an internet connection. Once reconnected, their responses are automatically synchronized with the platform, ensuring no data is lost.'
-    },
-    {
       question: 'How secure is the platform?',
       answer: 'PlantechX employs enterprise-grade security measures including end-to-end encryption, secure data storage, advanced proctoring features, and anti-cheating mechanisms. Our platform is compliant with international data protection standards and undergoes regular security audits.'
     },
     {
       question: 'Can educators customize exams and question banks?',
-      answer: 'Absolutely! Educators have complete control over exam creation and question bank management. You can create custom questions, import existing question sets, organize questions by topics or difficulty levels, and design exams that match your specific curriculum requirements.'
+      answer: 'Absolutely! Educators have complete control over exam creation and question bank management. You can create custom questions, organize questions by topics or difficulty levels, and design exams that match your specific curriculum requirements.'
     },
     {
       question: 'How do students receive performance insights?',
@@ -23,7 +19,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'What types of questions does PlantechX support?',
-      answer: 'PlantechX supports multiple question formats including multiple choice, coding problems, essay questions, fill-in-the-blanks, true/false, and custom formats. For coding assessments, we support multiple programming languages with automated compilation and testing.'
+      answer: 'PlantechX supports multiple question formats including multiple choice, coding problems, essay questions, true/false, and custom formats. For coding assessments, we support multiple programming languages with automated compilation and testing.'
     },
     {
       question: 'How does the platform handle large-scale examinations?',

@@ -21,14 +21,53 @@ const CTA: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 className="text-4xl lg:text-5xl font-inter font-bold text-white mb-4">
-          Ready to Transform Your Institution?
+          Ready to compete with these company exams through PlantechX?
         </h2>
 
-        <p className="text-lg text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Join leading institutions using PlantechX to empower students and streamline placements.
+        <p className="text-lg text-white/70 mb-16 max-w-3xl mx-auto leading-relaxed">
+          Enable your institution to match and exceed the quality standards of top global companies.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Accenture</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">TATA</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Wipro</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Google</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Dell</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Infosys</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Amazon</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">EPAM</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Coforge</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">HCL</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Cognizant</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Capgemini</div>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={openModal}
             className="group bg-gradient-to-r from-[#800020] to-[#A00030] text-white px-8 py-3 rounded-lg hover:shadow-2xl transition-all duration-300 font-medium flex items-center gap-2"
@@ -44,23 +83,6 @@ const CTA: React.FC = () => {
             Learn More
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all">
-            <div className="text-3xl font-bold text-white mb-2">500+</div>
-            <div className="text-white/70 text-sm">Trusted Institutions</div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all">
-            <div className="text-3xl font-bold text-white mb-2">100K+</div>
-            <div className="text-white/70 text-sm">Active Students</div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all">
-            <div className="text-3xl font-bold text-white mb-2">1M+</div>
-            <div className="text-white/70 text-sm">Exams Conducted</div>
-          </div>
         </div>
       </div>
     </section>

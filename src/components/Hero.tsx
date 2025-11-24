@@ -67,21 +67,6 @@ const Hero: React.FC = () => {
               </button>
             </div>
 
-            {/* Compact stats */}
-            <div className="mt-12 grid grid-cols-3 gap-6">
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold text-white">500+</div>
-                <div className="text-xs text-white/60 mt-1">Institutions</div>
-              </div>
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold text-white">100K+</div>
-                <div className="text-xs text-white/60 mt-1">Students</div>
-              </div>
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold text-white">99.9%</div>
-                <div className="text-xs text-white/60 mt-1">Uptime</div>
-              </div>
-            </div>
           </div>
 
           <div className="relative h-96 lg:h-full">
