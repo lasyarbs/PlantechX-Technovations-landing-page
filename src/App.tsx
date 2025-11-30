@@ -15,12 +15,7 @@ function App() {
   return (
     <DemoModalProvider>
       <div className="min-h-screen bg-black">
-
-        {/* STEP 1: Start with only Header */}
         <Header />
-
-        {/* UNCOMMENT ONE BY ONE TO FIND WHICH COMPONENT BREAKS */}
-        {/*
         <Hero />
         <About />
         <Features />
@@ -30,8 +25,6 @@ function App() {
         <CTA />
         <Footer />
         <DemoModal />
-        */}
-
       </div>
     </DemoModalProvider>
   );
