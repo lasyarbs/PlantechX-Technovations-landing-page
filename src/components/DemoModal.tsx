@@ -167,7 +167,7 @@ const DemoModal: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 bg-primary-800 text-white px-6 py-3 rounded-lg hover:bg-primary-900 transition-colors duration-200 font-medium flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="flex-1 bg-secondary-600 text-white px-6 py-3 rounded-lg hover:bg-secondary-700 transition-colors duration-200 font-medium flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>

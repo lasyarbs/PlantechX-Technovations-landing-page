@@ -32,41 +32,41 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-neutral-100 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute -top-40 right-20 w-96 h-96 bg-[#800020]/30 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 right-20 w-96 h-96 bg-secondary-200/50 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-inter font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-inter font-bold text-neutral-900 mb-4">
             FAQ
           </h2>
-          <p className="text-lg text-white/70">
+          <p className="text-lg text-neutral-600">
             Get answers to common questions
           </p>
         </div>
 
         <div className="space-y-3">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg overflow-hidden">
+            <div key={index} className="bg-white border border-neutral-300 rounded-lg overflow-hidden shadow-md">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-white/10 transition-colors duration-200"
+                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-neutral-50 transition-colors duration-200"
               >
-                <h3 className="text-base font-inter font-semibold text-white pr-4">
+                <h3 className="text-base font-inter font-semibold text-neutral-900 pr-4">
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
-                  <ChevronUp size={20} className="text-[#0EA5E9] flex-shrink-0" />
+                  <ChevronUp size={20} className="text-primary-700 flex-shrink-0" />
                 ) : (
-                  <ChevronDown size={20} className="text-[#0EA5E9] flex-shrink-0" />
+                  <ChevronDown size={20} className="text-primary-700 flex-shrink-0" />
                 )}
               </button>
 
               {openIndex === index && (
-                <div className="px-6 pb-5 border-t border-white/10">
-                  <p className="text-white/70 text-sm leading-relaxed">
+                <div className="px-6 pb-5 border-t border-neutral-200">
+                  <p className="text-neutral-600 text-sm leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -76,12 +76,12 @@ const FAQ: React.FC = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-white/70 mb-3">
+          <p className="text-neutral-600 mb-3">
             Still have questions? We're here to help.
           </p>
           <a
             href="mailto:support@plantechx.com"
-            className="text-[#0EA5E9] hover:text-white font-medium transition-colors duration-200 text-sm"
+            className="text-primary-700 hover:text-neutral-900 font-medium transition-colors duration-200 text-sm"
           >
             Contact our support team →
           </a>

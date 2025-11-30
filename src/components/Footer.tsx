@@ -25,9 +25,9 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer id="footer" className="bg-black text-white border-t border-white/10 relative overflow-hidden">
+    <footer id="footer" className="bg-neutral-900 text-white border-t border-neutral-700 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute -bottom-40 left-1/4 w-96 h-96 bg-[#800020]/30 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 left-1/4 w-96 h-96 bg-secondary-600/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               <img src="/Untitled-1_copy[1].jpg" alt="Plantech Logo" className="h-8 w-8 object-contain" />
               <div className="flex items-center space-x-0">
                 <span className="text-xl font-inter font-bold text-white">Plantech</span>
-                <span className="text-xl font-inter font-bold" style={{ color: '#0EA5E9' }}>X</span>
+                <span className="text-xl font-inter font-bold text-primary-400">X</span>
               </div>
             </div>
             <p className="text-white/60 leading-relaxed max-w-md text-sm">
@@ -50,19 +50,19 @@ const Footer: React.FC = () => {
           <div className="space-y-3">
             <h4 className="text-sm font-semibold text-white/80 mb-4">Contact</h4>
             <div className="flex items-center gap-3">
-              <Mail size={16} className="text-[#800020]" />
+              <Mail size={16} className="text-secondary-400" />
               <a href="mailto:contact@plantechx.in" className="text-white/70 hover:text-white transition-colors text-sm">
                 contact@plantechx.in
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Phone size={16} className="text-[#800020]" />
+              <Phone size={16} className="text-secondary-400" />
               <a href="tel:+1234567890" className="text-white/70 hover:text-white transition-colors text-sm">
                 +1 (234) 567-8900
               </a>
             </div>
             <div className="flex items-start gap-3">
-              <MapPin size={16} className="text-[#800020] flex-shrink-0 mt-0.5" />
+              <MapPin size={16} className="text-secondary-400 flex-shrink-0 mt-0.5" />
               <span className="text-white/70 text-sm">
                 Plot No:15, 2nd floor R.K Nagar, Srikakulam 532001
               </span>
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="bg-white/10 w-10 h-10 rounded-lg flex items-center justify-center hover:bg-[#800020] transition-colors border border-white/10"
+                  className="bg-white/10 w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary-600 transition-colors border border-white/10"
                 >
                   <social.icon size={18} />
                 </a>
