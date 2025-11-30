@@ -21,7 +21,7 @@ const CTA: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 className="text-4xl lg:text-5xl font-inter font-bold text-white mb-4">
-          Ready to compete with these company exams through PlantechX?
+          Transform Your Preparation for Leading Company Exams with PlantechX
         </h2>
 
         <p className="text-lg text-white/70 mb-16 max-w-3xl mx-auto leading-relaxed">
@@ -33,7 +33,7 @@ const CTA: React.FC = () => {
             <div className="text-white/90 font-bold text-sm">Accenture</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
-            <div className="text-white/90 font-bold text-sm">TATA</div>
+            <div className="text-white/90 font-bold text-sm">TCS/Elxsi</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
             <div className="text-white/90 font-bold text-sm">Wipro</div>
@@ -42,7 +42,7 @@ const CTA: React.FC = () => {
             <div className="text-white/90 font-bold text-sm">Google</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
-            <div className="text-white/90 font-bold text-sm">Dell</div>
+            <div className="text-white/90 font-bold text-sm">Microsoft</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
             <div className="text-white/90 font-bold text-sm">Infosys</div>
@@ -51,10 +51,10 @@ const CTA: React.FC = () => {
             <div className="text-white/90 font-bold text-sm">Amazon</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
-            <div className="text-white/90 font-bold text-sm">Delloite</div>
+            <div className="text-white/90 font-bold text-sm">IBM</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
-            <div className="text-white/90 font-bold text-sm">EY</div>
+            <div className="text-white/90 font-bold text-sm">Tech Mahendra</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
             <div className="text-white/90 font-bold text-sm">HCL</div>
@@ -65,7 +65,11 @@ const CTA: React.FC = () => {
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
             <div className="text-white/90 font-bold text-sm">Capgemini</div>
           </div>
+          <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
+            <div className="text-white/90 font-bold text-sm">Intel</div>
+          </div>
         </div>
+        
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
