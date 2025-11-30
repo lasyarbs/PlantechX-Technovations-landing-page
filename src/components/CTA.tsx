@@ -51,10 +51,10 @@ const CTA: React.FC = () => {
             <div className="text-white/90 font-bold text-sm">Amazon</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
-            <div className="text-white/90 font-bold text-sm">EPAM</div>
+            <div className="text-white/90 font-bold text-sm">Delloite</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
-            <div className="text-white/90 font-bold text-sm">Coforge</div>
+            <div className="text-white/90 font-bold text-sm">EY</div>
           </div>
           <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg p-6 hover:bg-white/20 hover:border-white/40 transition-all">
             <div className="text-white/90 font-bold text-sm">HCL</div>
