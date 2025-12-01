@@ -57,28 +57,28 @@ const DemoModal: React.FC = () => {
       className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
       onClick={handleOverlayClick}
     >
-      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all duration-300">
+      <div className="backdrop-blur-lg border rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all duration-300" style={{ backgroundColor: 'rgba(0, 0, 0, 0.95)', borderColor: 'rgba(199, 199, 199, 0.2)' }}>
         {!isSubmitted ? (
           <>
-            <div className="flex justify-between items-center p-6 border-b border-neutral-200">
+            <div className="flex justify-between items-center p-6 border-b" style={{ borderColor: 'rgba(199, 199, 199, 0.2)' }}>
               <div>
-                <h2 className="text-2xl font-inter font-bold text-neutral-900">Request a Demo</h2>
-                <p className="text-neutral-600 mt-1">
+                <h2 className="text-2xl font-inter font-bold text-white">Request a Demo</h2>
+                <p className="mt-1" style={{ color: '#C7C7C7' }}>
                   See PlantechX in action. We'll get back to you within 24 hours.
                 </p>
               </div>
               <button
                 onClick={closeModal}
-                className="p-2 hover:bg-neutral-100 rounded-lg transition-colors"
+                className="p-2 hover:bg-white/10 rounded-lg transition-colors"
               >
-                <X size={24} className="text-neutral-500" />
+                <X size={24} style={{ color: '#C7C7C7' }} />
               </button>
             </div>
 
             <form onSubmit={handleSubmit} className="p-6 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: '#C7C7C7' }}>
                     Full Name *
                   </label>
                   <input
@@ -88,13 +88,14 @@ const DemoModal: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 transition-all duration-200 bg-white/5 text-white"
+                    style={{ borderColor: 'rgba(199, 199, 199, 0.2)' }}
                     placeholder="Enter your full name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: '#C7C7C7' }}>
                     Email Address *
                   </label>
                   <input
@@ -104,14 +105,15 @@ const DemoModal: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 transition-all duration-200 bg-white/5 text-white"
+                    style={{ borderColor: 'rgba(199, 199, 199, 0.2)' }}
                     placeholder="Enter your email address"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="institution" className="block text-sm font-medium text-neutral-700 mb-2">
+                <label htmlFor="institution" className="block text-sm font-medium mb-2" style={{ color: '#C7C7C7' }}>
                   Institution/Organization *
                 </label>
                 <input
@@ -121,13 +123,14 @@ const DemoModal: React.FC = () => {
                   value={formData.institution}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 transition-all duration-200 bg-white/5 text-white"
+                  style={{ borderColor: 'rgba(199, 199, 199, 0.2)' }}
                   placeholder="Enter your institution name"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: '#C7C7C7' }}>
                   Message (Optional)
                 </label>
                 <textarea
@@ -136,13 +139,14 @@ const DemoModal: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-vertical"
+                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 transition-all duration-200 resize-vertical bg-white/5 text-white"
+                  style={{ borderColor: 'rgba(199, 199, 199, 0.2)' }}
                   placeholder="Tell us about your specific requirements or questions..."
                 />
               </div>
 
-              <div className="bg-neutral-50 p-4 rounded-lg">
-                <p className="text-sm text-neutral-600">
+              <div className="backdrop-blur-lg p-4 rounded-lg" style={{ backgroundColor: 'rgba(128, 0, 32, 0.1)', borderColor: 'rgba(199, 199, 199, 0.2)' }}>
+                <p className="text-sm" style={{ color: '#C7C7C7' }}>
                   By submitting this form, you agree to receive communications from PlantechX about our 
                   products and services. We respect your privacy and will never share your information 
                   with third parties.
@@ -160,14 +164,16 @@ const DemoModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={closeModal}
-                  className="flex-1 px-6 py-3 border border-neutral-300 text-neutral-700 rounded-lg hover:bg-neutral-50 transition-colors duration-200 font-medium"
+                  className="flex-1 px-6 py-3 border text-white rounded-lg hover:bg-white/10 transition-colors duration-200 font-medium"
+                  style={{ borderColor: '#C7C7C7' }}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 bg-secondary-600 text-white px-6 py-3 rounded-lg hover:bg-secondary-700 transition-colors duration-200 font-medium flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="flex-1 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-colors duration-200 font-medium flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  style={{ background: 'linear-gradient(to right, #800020, #A00030)' }}
                 >
                   {isSubmitting ? (
                     <>
@@ -186,20 +192,20 @@ const DemoModal: React.FC = () => {
           </>
         ) : (
           <div className="p-8 text-center">
-            <div className="bg-accent-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle size={40} className="text-accent-600" />
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: 'rgba(128, 0, 32, 0.2)' }}>
+              <CheckCircle size={40} style={{ color: '#800020' }} />
             </div>
-            <h2 className="text-2xl font-inter font-bold text-neutral-900 mb-4">
+            <h2 className="text-2xl font-inter font-bold text-white mb-4">
               Demo Request Submitted!
             </h2>
-            <p className="text-lg text-neutral-600 mb-6">
+            <p className="text-lg mb-6" style={{ color: '#C7C7C7' }}>
               Thank you for your interest in PlantechX. Our team will contact you within 24 hours 
               to schedule your personalized demo.
             </p>
-            <div className="bg-neutral-50 p-4 rounded-lg">
-              <p className="text-sm text-neutral-600">
-                In the meantime, feel free to explore our features section or contact us directly 
-                at <a href="mailto:demo@plantechx.com" className="text-primary-800 hover:underline">demo@plantechx.com</a>
+            <div className="backdrop-blur-lg p-4 rounded-lg" style={{ backgroundColor: 'rgba(128, 0, 32, 0.1)' }}>
+              <p className="text-sm" style={{ color: '#C7C7C7' }}>
+                In the meantime, feel free to explore our features section or contact us directly
+                at <a href="mailto:demo@plantechx.com" className="hover:underline" style={{ color: '#800020' }}>demo@plantechx.com</a>
               </p>
             </div>
           </div>
