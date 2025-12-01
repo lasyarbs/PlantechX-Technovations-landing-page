@@ -25,9 +25,9 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer id="footer" className="bg-neutral-900 text-white border-t border-neutral-700 relative overflow-hidden">
+    <footer id="footer" className="bg-black text-white border-t relative overflow-hidden" style={{ borderColor: 'rgba(199, 199, 199, 0.2)' }}>
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute -bottom-40 left-1/4 w-96 h-96 bg-secondary-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 left-1/4 w-96 h-96 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(128, 0, 32, 0.3)' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               <img src="/Untitled-1_copy[1].jpg" alt="Plantech Logo" className="h-8 w-8 object-contain" />
               <div className="flex items-center space-x-0">
                 <span className="text-xl font-inter font-bold text-white">Plantech</span>
-                <span className="text-xl font-inter font-bold text-primary-400">X</span>
+                <span className="text-xl font-inter font-bold" style={{ color: '#800020' }}>X</span>
               </div>
             </div>
             <p className="text-white/60 leading-relaxed max-w-md text-sm">
@@ -48,22 +48,22 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-white/80 mb-4">Contact</h4>
+            <h4 className="text-sm font-semibold mb-4" style={{ color: '#C7C7C7' }}>Contact</h4>
             <div className="flex items-center gap-3">
-              <Mail size={16} className="text-secondary-400" />
-              <a href="mailto:contact@plantechx.in" className="text-white/70 hover:text-white transition-colors text-sm">
+              <Mail size={16} style={{ color: '#800020' }} />
+              <a href="mailto:contact@plantechx.in" className="hover:text-white transition-colors text-sm" style={{ color: '#C7C7C7' }}>
                 contact@plantechx.in
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Phone size={16} className="text-secondary-400" />
-              <a href="tel:+1234567890" className="text-white/70 hover:text-white transition-colors text-sm">
+              <Phone size={16} style={{ color: '#800020' }} />
+              <a href="tel:+1234567890" className="hover:text-white transition-colors text-sm" style={{ color: '#C7C7C7' }}>
                 +1 (234) 567-8900
               </a>
             </div>
             <div className="flex items-start gap-3">
-              <MapPin size={16} className="text-secondary-400 flex-shrink-0 mt-0.5" />
-              <span className="text-white/70 text-sm">
+              <MapPin size={16} className="flex-shrink-0 mt-0.5" style={{ color: '#800020' }} />
+              <span className="text-sm" style={{ color: '#C7C7C7' }}>
                 Plot No:15, 2nd floor R.K Nagar, Srikakulam 532001
               </span>
             </div>
@@ -71,13 +71,14 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white/80 mb-4">Links</h4>
+            <h4 className="text-sm font-semibold mb-4" style={{ color: '#C7C7C7' }}>Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-white/70 hover:text-white transition-colors text-left text-sm"
+                    className="hover:text-white transition-colors text-left text-sm"
+                    style={{ color: '#C7C7C7' }}
                   >
                     {link.label}
                   </button>
@@ -86,7 +87,8 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={openModal}
-                  className="text-white/70 hover:text-white transition-colors text-sm"
+                  className="hover:text-white transition-colors text-sm"
+                  style={{ color: '#C7C7C7' }}
                 >
                   Request Demo
                 </button>
@@ -96,7 +98,7 @@ const Footer: React.FC = () => {
 
           {/* Social Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white/80 mb-4">Social</h4>
+            <h4 className="text-sm font-semibold mb-4" style={{ color: '#C7C7C7' }}>Social</h4>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
                 <a
@@ -105,7 +107,8 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="bg-white/10 w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary-600 transition-colors border border-white/10"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors border"
+                  style={{ backgroundColor: 'rgba(128, 0, 32, 0.2)', borderColor: 'rgba(199, 199, 199, 0.2)', color: '#C7C7C7' }}
                 >
                   <social.icon size={18} />
                 </a>
@@ -115,20 +118,20 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-white/10 mt-12 pt-8">
+        <div className="border-t mt-12 pt-8" style={{ borderColor: 'rgba(199, 199, 199, 0.2)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/60 text-sm">
+            <p className="text-sm" style={{ color: '#C7C7C7' }}>
               © 2025 PlantechX. All rights reserved.
             </p>
 
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors" style={{ color: '#C7C7C7' }}>
                 Privacy Policy
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors" style={{ color: '#C7C7C7' }}>
                 Terms of Service
               </a>
-              <a href="#" className="text-white/60 hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors" style={{ color: '#C7C7C7' }}>
                 Cookie Policy
               </a>
             </div>

@@ -1,6 +1,10 @@
 import { supabase, DemoRequest } from '../lib/supabase';
 
 export const submitDemoRequest = async (data: DemoRequest) => {
+  if (!supabase) {
+    throw new Error('Supabase is not configured');
+  }
+
   const { data: result, error } = await supabase
     .from('demo_requests')
     .insert([
@@ -59,6 +63,10 @@ const sendEmailNotification = async (demoRequest: any) => {
 };
 
 export const getAllDemoRequests = async () => {
+  if (!supabase) {
+    throw new Error('Supabase is not configured');
+  }
+
   const { data, error } = await supabase
     .from('demo_requests')
     .select('*')
@@ -72,6 +80,10 @@ export const getAllDemoRequests = async () => {
 };
 
 export const updateDemoRequestStatus = async (id: string, status: string) => {
+  if (!supabase) {
+    throw new Error('Supabase is not configured');
+  }
+
   const { data, error } = await supabase
     .from('demo_requests')
     .update({ status })

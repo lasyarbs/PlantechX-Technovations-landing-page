@@ -61,8 +61,8 @@ const Header: React.FC = () => {
 
           <div className="hidden md:flex items-center space-x-3">
             <button
-              className="px-5 py-2 font-medium transition-colors duration-200 text-sm hover:text-white"
-              style={{ color: '#C7C7C7' }}
+              className="text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-200 font-medium text-sm"
+              style={{ background: 'linear-gradient(to right, #800020, #A00030)' }}
             >
               Log In
             </button>
@@ -98,8 +98,8 @@ const Header: React.FC = () => {
                 </button>
               ))}
               <button
-                className="block w-full text-left px-3 py-2 rounded-md transition-colors duration-200 hover:bg-white/10"
-                style={{ color: '#C7C7C7' }}
+                className="w-full text-left text-white px-3 py-2 rounded-md hover:shadow-lg transition-all duration-200"
+                style={{ background: 'linear-gradient(to right, #800020, #A00030)' }}
               >
                 Log In
               </button>
