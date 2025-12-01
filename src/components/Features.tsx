@@ -1,11 +1,10 @@
 import React from 'react';
-import { 
-  FileText, 
-  Target, 
-  BarChart3, 
-  Shield, 
-  Smartphone, 
-  Settings,
+import {
+  FileText,
+  Target,
+  BarChart3,
+  Shield,
+  Smartphone,
   Code,
   Clock
 } from 'lucide-react';
@@ -81,18 +80,18 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-24 bg-white relative">
+    <section id="features" className="py-24 bg-black relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-secondary-200/50 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-primary-200/50 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(128, 0, 32, 0.3)' }}></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-inter font-bold text-neutral-900 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-inter font-bold text-white mb-6">
             Powerful Features
           </h2>
-          <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg max-w-3xl mx-auto" style={{ color: '#C7C7C7' }}>
             Everything you need for modern educational assessment
           </p>
         </div>
@@ -101,24 +100,25 @@ const Features: React.FC = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-neutral-50 border border-neutral-300 rounded-xl p-6 hover:shadow-xl hover:border-neutral-400 transition-all duration-300 group"
+              className="backdrop-blur-lg border rounded-xl p-6 hover:border-opacity-100 transition-all duration-300 group"
+              style={{ backgroundColor: 'rgba(128, 0, 32, 0.1)', borderColor: 'rgba(199, 199, 199, 0.2)' }}
             >
-              <div className="bg-gradient-to-br from-secondary-500 to-secondary-600 w-12 h-12 rounded-lg flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style={{ background: 'linear-gradient(to br, #800020, #A00030)' }}>
                 <feature.icon size={24} className="text-white" />
               </div>
 
-              <h3 className="text-lg font-inter font-semibold text-neutral-900 mb-3">
+              <h3 className="text-lg font-inter font-semibold text-white mb-3">
                 {feature.title}
               </h3>
 
-              <p className="text-neutral-600 text-sm mb-5 leading-relaxed">
+              <p className="text-sm mb-5 leading-relaxed" style={{ color: '#C7C7C7' }}>
                 {feature.description}
               </p>
 
               <ul className="space-y-2">
                 {feature.details.map((detail, detailIndex) => (
-                  <li key={detailIndex} className="flex items-center text-xs text-neutral-500">
-                    <div className="w-1 h-1 bg-secondary-600 rounded-full mr-2"></div>
+                  <li key={detailIndex} className="flex items-center text-xs" style={{ color: '#C7C7C7' }}>
+                    <div className="w-1 h-1 rounded-full mr-2 flex-shrink-0" style={{ backgroundColor: '#800020' }}></div>
                     {detail}
                   </li>
                 ))}
@@ -127,10 +127,10 @@ const Features: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-20 bg-neutral-50 border border-neutral-300 rounded-2xl p-8 lg:p-12 shadow-lg">
+        <div className="mt-20 backdrop-blur-lg border rounded-2xl p-8 lg:p-12" style={{ backgroundColor: 'rgba(128, 0, 32, 0.1)', borderColor: 'rgba(199, 199, 199, 0.2)' }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-inter font-bold text-neutral-900 mb-6">
+              <h3 className="text-3xl font-inter font-bold text-white mb-6">
                 Why Choose PlantechX
               </h3>
 
@@ -142,16 +142,16 @@ const Features: React.FC = () => {
                   { icon: Shield, text: 'Security: Ensures exam integrity with strict access controls' }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="bg-secondary-100 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 border border-secondary-300">
-                      <item.icon size={20} className="text-accent-600" />
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 border" style={{ backgroundColor: 'rgba(128, 0, 32, 0.2)', borderColor: '#800020' }}>
+                      <item.icon size={20} style={{ color: '#C7C7C7' }} />
                     </div>
-                    <p className="text-neutral-700 text-sm">{item.text}</p>
+                    <p className="text-sm" style={{ color: '#C7C7C7' }}>{item.text}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-xl overflow-hidden border border-neutral-300 shadow-lg">
+            <div className="rounded-xl overflow-hidden border" style={{ borderColor: '#800020' }}>
               <img
                 src="https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Educational technology in action"
